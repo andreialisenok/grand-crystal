@@ -43,6 +43,7 @@ body.is-lock {
   position: relative !important;
 }
 .swiper-promo .swiper-slide {
+  background: url('./image/slide.jpg') no-repeat;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-position: center;
@@ -1323,6 +1324,12 @@ body.is-lock {
   }
 }
 @media (max-width: 991px) {
+  .swiper-promo .swiper-slide {
+    background: url('./image/slide-mob.jpg') no-repeat;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center;
+  }
   .mobile-menu {
     left: 0;
     right: 0;
@@ -1347,6 +1354,7 @@ body.is-lock {
   .promo .subtitle {
     font-size: 1.8rem;
     margin-bottom: 24px;
+    max-width: 70%;
   }
   .promo .info {
     width: 100%;
