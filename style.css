@@ -107,7 +107,7 @@ header.bg-white .row .phone {
   color: #000;
 }
 header.bg-white .row .social a svg {
-  fill: #000;
+  fill: #ccc;
 }
 .header .row {
   display: flex;
@@ -1373,6 +1373,9 @@ header.bg-white .mobile-menu .row {
   }
   .header .social a svg {
     fill: #000;
+  }
+  header.bg-white .row .contacts {
+    border-left: none;
   }
   header.bg-white .row .burger.active span:nth-child(1) {
     background: #fff;
