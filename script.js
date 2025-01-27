@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('scroll', function () {
+    console.log(window.scrollY);
+    if (window.scrollY > 50) {
+      document.querySelector('.header').classList.add('bg-white');
+    } else {
+      document.querySelector('.header').classList.remove('bg-white');
+    }
+  });
   const burger = document.querySelector('.burger');
   const mobileMenu = document.querySelector('.mobile-menu');
   burger.addEventListener('click', () => {
