@@ -1425,6 +1425,18 @@ body.is-lock {
     max-height: 220px;
     display: block;
   }
+  .advantages .bottom .col div:first-child {
+    flex-direction: row;
+    width: 155px;
+    height: 50px;
+    padding: 8px;
+  }
+  .advantages .bottom .col div p:last-child {
+    padding: 4px;
+  }
+  .advantages .bottom .col:nth-child(1) {
+    height: 300px;
+  }
   .advantages .bottom .col:nth-child(1) img {
     max-height: 300px;
     height: 100%;
