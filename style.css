@@ -1422,7 +1422,7 @@ body.is-lock {
     max-width: 100%;
     width: 100%;
     object-fit: cover;
-    max-height: 220px;
+    max-height: 140px;
     display: block;
   }
   .advantages .bottom .col div:first-child {
