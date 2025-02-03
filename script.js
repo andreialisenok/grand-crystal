@@ -1,21 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-  window.addEventListener('scroll', function () {
-    console.log(window.scrollY);
-    if (window.scrollY > 50) {
-      document.querySelector('.header').classList.add('bg-white');
-    } else {
-      document.querySelector('.header').classList.remove('bg-white');
-    }
-  });
   const burger = document.querySelector('.burger');
   const mobileMenu = document.querySelector('.mobile-menu');
-  burger.addEventListener('click', () => {
+  burger.addEventListener('click', (e) => {
+    e.stopPropagation();
     burger.classList.toggle('active');
     mobileMenu.classList.toggle('active');
 
     if (window.innerWidth <= 1199) {
       document.querySelector('body').classList.toggle('is-lock');
     }
+  });
+  document.querySelector('body').addEventListener('click', (e) => {
+    e.stopPropagation();
+    burger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    document.querySelector('body').classList.remove('is-lock');
+  });
+  mobileMenu.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  const itemsSliderZoom = document.querySelectorAll(
+    '.swiper-advantages .swiper-slide'
+  );
+  const itemsZoom = document.querySelectorAll('.advantages-zoom div');
+  const boxZoom = document.querySelector('.advantages-zoom');
+
+  itemsSliderZoom.forEach((itemSliderZoom, i) => {
+    itemsZoom.forEach((itemZoom, j) => {
+      itemSliderZoom.addEventListener('click', () => {
+        if (i === j) {
+          itemZoom.classList.add('active');
+          boxZoom.classList.add('active');
+        }
+
+        boxZoom.addEventListener('click', () => {
+          itemZoom.classList.remove('active');
+          boxZoom.classList.remove('active');
+        });
+        itemZoom.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+      });
+    });
   });
   const swiperPromo = new Swiper('.swiper-promo', {
     loop: true,
@@ -51,8 +78,23 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     });
   }
-  ymaps.ready(init);
-
+  const swiperApartment = new Swiper('.swiper-apartment', {
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 24,
+    freeMode: true,
+  });
+  const swiperApartment2 = new Swiper('.swiper-apartment2', {
+    loop: true,
+    spaceBetween: 24,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    thumbs: {
+      swiper: swiperApartment,
+    },
+  });
   function init() {
     var myMap = new ymaps.Map('map', {
         center: [53.937456, 27.471128],
@@ -67,4 +109,5 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     );
   }
+  ymaps.ready(init);
 });
