@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
       swiper: swiperParking,
     },
   });
+
   // function init() {
   //   var myMap = new ymaps.Map('map', {
   //       center: [53.937456, 27.471128],

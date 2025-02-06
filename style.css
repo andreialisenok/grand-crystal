@@ -99,11 +99,9 @@ body.is-lock {
   align-items: center;
   justify-content: center;
 }
-.header .logo svg path {
-  fill: #000;
-}
-.header .logo svg path:last-child {
-  stroke: #000;
+
+.header .logo img {
+  width: 155px;
 }
 .header .apartment-btn {
   font-family: 'Montserrat', serif;
@@ -2703,12 +2701,6 @@ body.is-lock {
   }
   .promo {
     margin-top: 72px;
-  }
-  .header .logo svg path {
-    fill: #000;
-  }
-  .header .logo svg path:last-child {
-    stroke: #000;
   }
   .feedback .col {
     flex-direction: column;
