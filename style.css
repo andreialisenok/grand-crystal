@@ -924,6 +924,7 @@ body.is-lock {
 }
 .gallery-main h2 {
   font-family: 'GrandCrystal', serif;
+  font-family: 'Arial', sans-serif;
   display: inline-block;
   margin: 0;
   margin-bottom: 40px;
