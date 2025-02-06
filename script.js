@@ -95,19 +95,36 @@ document.addEventListener('DOMContentLoaded', () => {
       swiper: swiperApartment,
     },
   });
-  function init() {
-    var myMap = new ymaps.Map('map', {
-        center: [53.937456, 27.471128],
-        zoom: 14,
-        controls: [],
-      }),
-      myGeoObject = new ymaps.GeoObject({});
+  const swiperParking = new Swiper('.swiper-parking', {
+    loop: true,
+    slidesPerView: 4,
+    spaceBetween: 24,
+    freeMode: true,
+  });
+  const swiperParking2 = new Swiper('.swiper-parking2', {
+    loop: true,
+    spaceBetween: 24,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    thumbs: {
+      swiper: swiperParking,
+    },
+  });
+  // function init() {
+  //   var myMap = new ymaps.Map('map', {
+  //       center: [53.937456, 27.471128],
+  //       zoom: 14,
+  //       controls: [],
+  //     }),
+  //     myGeoObject = new ymaps.GeoObject({});
 
-    myMap.geoObjects.add(myGeoObject).add(
-      new ymaps.Placemark([53.937456, 27.471128], {
-        iconColor: '#184eca',
-      })
-    );
-  }
-  ymaps.ready(init);
+  //   myMap.geoObjects.add(myGeoObject).add(
+  //     new ymaps.Placemark([53.937456, 27.471128], {
+  //       iconColor: '#184eca',
+  //     })
+  //   );
+  // }
+  // ymaps.ready(init);
 });
