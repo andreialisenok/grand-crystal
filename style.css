@@ -14,6 +14,13 @@
 }
 @font-face {
   font-family: 'Montserrat';
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+    url('./fonts/Montserrat-SemiBold.woff2') format('woff2'),
+    url('./fonts/Montserrat-SemiBold.woff') format('woff');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Montserrat';
   src: local('Montserrat Bold'), local('Montserrat-Bold'),
     url('./fonts/Montserrat-Bold.woff2') format('woff2'),
     url('./fonts/Montserrat-Bold.woff') format('woff');
@@ -113,7 +120,7 @@ body.is-lock {
   justify-content: center;
   gap: 10px;
   width: 200px;
-  font-weight: 700;
+  font-weight: 600;
   background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   color: transparent;
   background-clip: text;
@@ -159,7 +166,7 @@ body.is-lock {
   text-decoration: none;
   color: #fff;
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   color: transparent;
@@ -171,7 +178,7 @@ body.is-lock {
 .header .request {
   font-family: 'Montserrat', serif;
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #fff;
   display: flex;
   align-items: center;
@@ -353,7 +360,7 @@ body.is-lock {
   margin-bottom: 16px;
   color: rgba(17, 17, 17, 1);
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
 }
 .mobile-menu .content {
@@ -369,7 +376,7 @@ body.is-lock {
   color: transparent;
   background-clip: text;
   font-size: 3.2rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 16px;
   display: block;
   line-height: 1;
@@ -407,7 +414,7 @@ body.is-lock {
 .mobile-menu button {
   font-family: 'Montserrat', serif;
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #fff;
   display: flex;
   align-items: center;
@@ -472,12 +479,12 @@ body.is-lock {
   font-size: 1.8rem;
   color: rgba(17, 17, 17, 1);
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
 }
 .promo .link img {
-  width: 24px;
-  height: 24px;
+  width: 12px;
+  height: 12px;
 }
 .advantages {
   padding: 80px 0;
@@ -527,7 +534,7 @@ body.is-lock {
   color: rgba(68, 68, 68, 1);
   background-clip: text;
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 600;
   margin-right: 180px;
 }
 .advantages .top .info {
@@ -584,7 +591,7 @@ body.is-lock {
   padding: 16px;
 }
 .advantages .bottom .col div p:first-child {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 3.2rem;
   color: #000;
   margin: 0;
@@ -648,7 +655,7 @@ body.is-lock {
 }
 .advantages-zoom div h5 {
   font-family: 'Montserrat', serif;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 3.2rem;
   margin: 16px 0;
   color: rgba(17, 17, 17, 1);
@@ -761,7 +768,7 @@ body.is-lock {
   margin: 0;
   font-size: 3.2rem;
   display: block;
-  font-weight: 700;
+  font-weight: 600;
   background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   color: transparent;
   background-clip: text;
@@ -770,7 +777,7 @@ body.is-lock {
 .planning .col div:nth-child(2) span:nth-child(2) {
   font-size: 1.8rem;
   color: #000;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 20px;
 }
 .planning .col p {
@@ -800,7 +807,7 @@ body.is-lock {
   padding: 28px 10px;
   color: #000;
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   width: 100%;
 }
@@ -1005,7 +1012,7 @@ body.is-lock {
 .feedback .info .content a:first-of-type {
   text-decoration: none;
   font-size: 3.2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: rgba(17, 17, 17, 1);
   margin-bottom: 24px;
   display: inline-block;
@@ -1252,7 +1259,7 @@ body.is-lock {
   display: inline-block;
   margin: 0;
   font-size: 2.4rem;
-  font-weight: 700;
+  font-weight: 600;
   background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   color: transparent;
   background-clip: text;
@@ -1286,7 +1293,7 @@ body.is-lock {
   z-index: 200;
 }
 .section-box .col div p:first-child {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 3.2rem;
   color: #000;
   margin: 0;
@@ -1434,7 +1441,7 @@ body.is-lock {
   display: inline-block;
   margin: 0;
   font-size: 3.2rem;
-  font-weight: 700;
+  font-weight: 600;
   background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   color: transparent;
   background-clip: text;
@@ -1443,7 +1450,7 @@ body.is-lock {
 .catalog-box .col div:last-child span:nth-child(2) {
   font-size: 1.8rem;
   color: #000;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 20px;
 }
 .catalog-box .col div:last-child p {
@@ -1517,7 +1524,7 @@ body.is-lock {
   display: inline-block;
   margin: 0;
   font-size: 3.2rem;
-  font-weight: 700;
+  font-weight: 600;
   background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   color: transparent;
   background-clip: text;
@@ -1526,7 +1533,7 @@ body.is-lock {
 .watched .col div:last-child span:nth-child(2) {
   font-size: 1.8rem;
   color: #000;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 20px;
 }
 .watched .col div:last-child p {
@@ -1589,7 +1596,7 @@ body.is-lock {
 }
 .apartment .col:nth-child(2) span {
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   color: rgba(17, 17, 17, 1);
   margin-bottom: 30px;
 }
@@ -1598,7 +1605,7 @@ body.is-lock {
   margin: 0;
   color: #fff;
   font-size: 4rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   color: transparent;
@@ -1608,7 +1615,7 @@ body.is-lock {
 .apartment .col:nth-child(2) p {
   margin: 0;
   font-size: 2.4rem;
-  font-weight: 700;
+  font-weight: 600;
   color: rgba(17, 17, 17, 1);
   margin-bottom: 40px;
 }
@@ -1649,7 +1656,7 @@ body.is-lock {
   gap: 40px;
 }
 .payment h2 {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 3.2rem;
   margin: 0;
   color: rgba(68, 68, 68, 1);
@@ -1679,7 +1686,7 @@ body.is-lock {
 .payment .list .item h5 {
   margin: 0;
   font-size: 2.4rem;
-  font-weight: 700;
+  font-weight: 600;
   background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   color: transparent;
   background-clip: text;
@@ -1760,7 +1767,7 @@ body.is-lock {
   background: rgba(255, 255, 255, 0.8);
 }
 .news-list .item h5 {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 2.4rem;
   color: rgba(17, 17, 17, 1);
   margin: 0;
@@ -1884,7 +1891,7 @@ body.is-lock {
 }
 .news .bottom a:first-child {
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
   color: rgba(17, 17, 17, 1);
   cursor: pointer;
@@ -2026,7 +2033,7 @@ body.is-lock {
   text-decoration: none;
   color: #fff;
   font-size: 3.2rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   color: transparent;
@@ -2037,7 +2044,7 @@ body.is-lock {
 .contacts button {
   font-family: 'Montserrat', serif;
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #fff;
   display: flex;
   align-items: center;
@@ -2249,7 +2256,7 @@ body.is-lock {
   padding: 80px 0;
 }
 .ceo h5 {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 3.2rem;
   margin: 0;
   color: rgba(17, 17, 17, 1);
@@ -2343,7 +2350,7 @@ body.is-lock {
 .entertainment ul li h5 {
   margin: 0;
   font-size: 2.4rem;
-  font-weight: 700;
+  font-weight: 600;
   color: rgba(68, 68, 68, 1);
 }
 .entertainment ul li p {
@@ -2370,7 +2377,7 @@ body.is-lock {
 .parking .hero button {
   font-family: 'Montserrat', serif;
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #fff;
   display: flex;
   align-items: center;
@@ -2467,7 +2474,7 @@ body.is-lock {
   margin: 0;
   color: #fff;
   font-size: 4rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   color: transparent;
@@ -2476,7 +2483,7 @@ body.is-lock {
 }
 .parking .info .col:nth-child(2) span:nth-of-type(1) {
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   color: rgba(17, 17, 17, 1);
   margin-bottom: 8px;
 }
