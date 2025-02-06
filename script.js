@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.querySelector('.burger');
   const mobileMenu = document.querySelector('.mobile-menu');
+  const modal = document.querySelector('.modal');
+  const btnSend = document.querySelectorAll('.send');
+  const modalForm = document.querySelector('.modal form');
   burger.addEventListener('click', (e) => {
     e.stopPropagation();
     burger.classList.toggle('active');
@@ -19,7 +22,21 @@ document.addEventListener('DOMContentLoaded', () => {
   mobileMenu.addEventListener('click', (e) => {
     e.stopPropagation();
   });
-
+  btnSend.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      modal.classList.add('active');
+      // modalForm.forEach((form) => {
+      //   form.reset();
+      // });
+    });
+  });
+  modalForm.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+  modal.addEventListener('click', (e) => {
+    e.stopPropagation();
+    modal.classList.remove('active');
+  });
   const itemsSliderZoom = document.querySelectorAll(
     '.swiper-advantages .swiper-slide'
   );

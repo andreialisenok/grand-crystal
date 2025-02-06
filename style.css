@@ -2562,6 +2562,113 @@ body.is-lock {
   display: block;
   width: 100%;
 }
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.modal.active {
+  display: flex;
+}
+.modal form {
+  background: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.modal form h5 {
+  font-size: 4rem;
+  margin: 0;
+  margin-bottom: 40px;
+  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
+  color: transparent;
+  background-clip: text;
+}
+.modal form label span {
+  color: rgba(17, 17, 17, 1);
+  font-family: 'Montserrat', serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.modal form input {
+  width: 100%;
+  height: 82px;
+  border: 1px solid rgba(194, 194, 194, 1);
+  padding: 16px 24px;
+  font-family: 'Montserrat', serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: #000;
+}
+.modal form input::placeholder {
+  font-family: 'Montserrat', serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: rgba(68, 68, 68, 1);
+}
+.modal form .name {
+  margin-bottom: 20px;
+}
+.modal form .phone {
+  margin-bottom: 40px;
+}
+.modal form .checkbox {
+  font-family: 'Montserrat', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgba(68, 68, 68, 1);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  position: relative;
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+.modal form .checkbox span {
+  cursor: pointer;
+  display: flex;
+  flex: 0 0 32px;
+  border: 1px solid #c2c2c2;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.modal form .checkbox input:checked + span {
+  background: url('./image/check.svg') no-repeat;
+  background-position: center;
+}
+.modal form .checkbox input {
+  visibility: hidden; /* <-- Hide the default checkbox. The rest is to hide and allow tabbing, which display:none prevents */
+  display: block;
+  height: 0;
+  width: 0;
+  position: absolute;
+  overflow: hidden;
+}
+.modal form button {
+  width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: #fff;
+  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
+  grid-area: button;
+}
 @media (max-width: 1919px) {
   .footer .row::before {
     display: none;
@@ -2776,6 +2883,9 @@ body.is-lock {
   }
 }
 @media (max-width: 991px) {
+  .modal form h5 {
+    font-size: 3.2rem;
+  }
   .parking .hero {
     padding: 140px 20px;
   }
