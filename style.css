@@ -110,22 +110,6 @@ body.is-lock {
 .header .logo img {
   width: 155px;
 }
-.header .apartment-btn {
-  font-family: 'Montserrat', serif;
-  font-size: 1.8rem;
-  background: #fff;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 200px;
-  font-weight: 600;
-  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
-  color: transparent;
-  background-clip: text;
-  margin-right: 40px;
-}
 .header .menu {
   padding: 0;
   margin: 0;
@@ -136,17 +120,50 @@ body.is-lock {
 }
 .header .menu li {
   list-style: none;
-  height: 100%;
+  /* height: 100%; */
 }
 .header .menu a {
-  font-family: 'Montserrat', serif;
-  font-size: 1.8rem;
-  color: #000;
   text-decoration: none;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+.header .menu a:hover span {
+  transform: translateY(-100%);
+  position: relative;
+}
+.header .menu a span::before {
+  font-size: 1.8rem;
+  color: #000;
+  position: absolute;
+  content: attr(data-title);
+  top: 100%;
+}
+.header .menu li:first-child a span::before {
+  font-size: 1.8rem;
+  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
+  font-weight: 600;
+  color: transparent;
+  background-clip: text;
+  position: absolute;
+  content: attr(data-title);
+  top: 100%;
+}
+.header .menu a span {
+  font-family: 'Montserrat', serif;
+  font-size: 1.8rem;
+  color: #000;
+  position: relative;
+  display: inline-block;
+  transition: transform 0.2s ease-in;
+}
+.header .menu li:first-child a span {
+  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
+  font-weight: 600;
+  color: transparent;
+  background-clip: text;
 }
 .header .contacts {
   display: flex;
@@ -174,20 +191,32 @@ body.is-lock {
   margin-left: auto;
   width: 100%;
   max-width: 280px;
+  transition: background 0.3s ease-in-out;
+  background-size: 100% auto;
+}
+.header .phone:hover {
+  background-size: 300% auto;
 }
 .header .request {
-  font-family: 'Montserrat', serif;
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   cursor: pointer;
-  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   width: 230px;
   height: 72px;
+  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
+  font-family: 'Montserrat', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+  transition: background 0.3s ease-in-out;
+  background-size: 100% auto;
+  overflow: hidden;
+  position: relative;
+}
+.header .request:hover {
+  background-size: 300% auto;
 }
 .mobile-menu {
   display: block;
@@ -467,11 +496,6 @@ body.is-lock {
   right: 16px;
   bottom: 0;
   z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  background: #fff;
   bottom: 55px;
   text-decoration: none;
   width: 230px;
@@ -481,6 +505,65 @@ body.is-lock {
   line-height: 1.2;
   font-weight: 600;
   text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+.promo .link::before {
+  background: #fff;
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: red;
+  z-index: 100;
+}
+.promo .link:hover {
+  border: 2px solid transparent;
+  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
+}
+.promo .link .visible span {
+  color: rgba(17, 17, 17, 1);
+}
+.promo .link .not-visible span {
+  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
+  color: transparent;
+  background-clip: text;
+}
+.promo .link .visible {
+  gap: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  z-index: 200;
+}
+.promo .link .not-visible {
+  gap: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(70%);
+  border: none;
+  z-index: 200;
+}
+.promo .link:hover .visible {
+  transform: translateY(-70%);
+}
+.promo .link:hover .not-visible {
+  transform: translateY(0%);
 }
 .promo .link img {
   width: 12px;
@@ -3238,9 +3321,6 @@ body.is-lock {
   .mobile-menu.active {
     height: auto;
   }
-  .header .apartment-btn {
-    display: none;
-  }
   .advantages {
     padding: 24px 0 40px;
   }
@@ -3768,9 +3848,6 @@ body.is-lock {
   .mobile-menu button {
     display: flex;
   }
-  .header .burger {
-    border-right: 1px solid rgba(194, 194, 194, 1);
-  }
   .header .phone {
     display: none;
   }
@@ -3780,7 +3857,6 @@ body.is-lock {
     justify-content: center;
     width: 70px;
     height: 70px;
-    border-left: 1px solid rgba(194, 194, 194, 1);
     text-decoration: none;
   }
   .header .request {

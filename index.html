@@ -142,16 +142,26 @@
           <a href="./index.html" class="logo">
             <img src="./image/logo.svg" alt="" />
           </a>
-          <a href="./catalog.html" class="apartment-btn">Выбрать квартиру </a>
           <ul class="menu">
             <li>
-              <a href="./about.html">О комплексе</a>
+              <a href="./catalog.html">
+                <span data-title="Выбрать квартиру">Выбрать квартиру</span>
+              </a>
             </li>
             <li>
-              <a href="./purchase.html">Условия покупки</a>
+              <a href="./about.html">
+                <span data-title="О комплексе">О комплексе</span>
+              </a>
             </li>
             <li>
-              <a href="./news-list.html">Новости</a>
+              <a href="./purchase.html">
+                <span data-title="Условия покупки">Условия покупки</span>
+              </a>
+            </li>
+            <li>
+              <a href="./news-list.html"
+                ><span data-title="Новости">Новости</span></a
+              >
             </li>
           </ul>
           <a class="phone" href="tel:+375 29 375 29 29">
@@ -206,8 +216,14 @@
                   ЖК Гранд Кристал
                 </h1>
                 <a href="#" class="link">
-                  Подробнее
-                  <img src="./image/arrow-violet.svg" alt="" />
+                  <div class="visible">
+                    <span>Подробнее</span>
+                    <img src="./image/arrow-violet.svg" alt="" />
+                  </div>
+                  <div class="not-visible">
+                    <span>Подробнее</span>
+                    <img src="./image/arrow-violet.svg" alt="" />
+                  </div>
                 </a>
               </div>
             </div>
@@ -684,30 +700,33 @@
     <div class="modal">
       <form>
         <h5>Заказать звонок</h5>
-        <label for="name" class="name">
+        <label for="name1" class="name">
           <span>Имя</span>
-          <input type="text" placeholder="Имя" id="name" required /></label
-        ><label for="phone" class="phone">
+          <input type="text" placeholder="Имя" id="name1" required /></label
+        ><label for="phone1" class="phone">
           <span>Телефон</span>
-          <input type="tel" placeholder="+375" id="phone" required
+          <input type="tel" placeholder="+375" id="phone1" required
         /></label>
-        <label for="checkbox" class="checkbox">
-          <input type="checkbox" id="checkbox" />
+        <label for="checkbox1" class="checkbox">
+          <input type="checkbox" id="checkbox1" />
           <span></span>
           Я согласен(а) с условиями обработки персональных данных
         </label>
         <button type="submit">Оставить заявку</button>
       </form>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- <script
-      src="https://api-maps.yandex.ru/v3/?apikey=2f5f2705-b70d-4afb-ad3f-7767330a0e72
-&lang=ru_RU"
+
+    <script
+      src="https://api-maps.yandex.ru/3.0/?apikey=2f5f2705-b70d-4afb-ad3f-7767330a0e72&lang=ru_RU"
       type="text/javascript"
-    ></script> -->
-    <!-- <script src="https://api-maps.yandex.ru/v3/?apikey=2f5f2705-b70d-4afb-ad3f-7767330a0e72&lang=ru_RU"></script> -->
-    <!-- <script>
+    ></script>
+
+    <!-- <script src="https://api-maps.yandex.ru/v2.1/?apikey=2f5f2705-b70d-4afb-ad3f-7767330a0e72&lang=ru_RU"></script> -->
+    <script>
       initMap();
+
 
       async function initMap() {
         await ymaps3.ready;
@@ -722,6 +741,17 @@
         });
 
         map.addChild(new YMapDefaultSchemeLayer());
+      }
+    </script>
+
+    <!-- <script>
+      ymaps.ready(init);
+      function init() {
+        // Создание карты.
+        var myMap = new ymaps.Map('map', {
+          center: [37.588144, 55.733842],
+          zoom: 7,
+        });
       }
     </script> -->
     <script src="./script.js"></script>
