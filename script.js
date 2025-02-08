@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.querySelector('.modal');
   const btnSend = document.querySelectorAll('.send');
   const modalForm = document.querySelector('.modal form');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 72) {
+      document.querySelector('.header').classList.add('shadow');
+    } else {
+      document.querySelector('.header').classList.remove('shadow');
+    }
+  });
   burger.addEventListener('click', (e) => {
     e.stopPropagation();
     burger.classList.toggle('active');

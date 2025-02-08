@@ -75,6 +75,12 @@ body.is-lock {
   right: 0;
   background: #fff;
 }
+.header.shadow {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
 .header .row {
   display: flex;
 }
@@ -117,6 +123,7 @@ body.is-lock {
   align-items: center;
   justify-content: space-between;
   gap: 40px;
+  padding: 0 40px;
 }
 .header .menu li {
   list-style: none;
@@ -124,46 +131,28 @@ body.is-lock {
 }
 .header .menu a {
   text-decoration: none;
-  /* height: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-}
-.header .menu a:hover span {
-  transform: translateY(-100%);
-  position: relative;
-}
-.header .menu a span::before {
-  font-size: 1.8rem;
-  color: #000;
-  position: absolute;
-  content: attr(data-title);
-  top: 100%;
-}
-.header .menu li:first-child a span::before {
-  font-size: 1.8rem;
-  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
-  font-weight: 600;
-  color: transparent;
-  background-clip: text;
-  position: absolute;
-  content: attr(data-title);
-  top: 100%;
-}
-.header .menu a span {
   font-family: 'Montserrat', serif;
   font-size: 1.8rem;
   color: #000;
-  position: relative;
-  display: inline-block;
-  transition: transform 0.2s ease-in;
+  transition: all 0.3s ease-in;
 }
-.header .menu li:first-child a span {
+.header .menu a:hover {
+  color: rgba(157, 72, 174, 1);
+}
+.header .menu li:first-child a {
+  font-size: 1.8rem;
   background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   font-weight: 600;
   color: transparent;
   background-clip: text;
+  background-size: 100% auto;
+}
+.header .menu li:first-child a:hover {
+  background-size: 300% auto;
 }
 .header .contacts {
   display: flex;
@@ -234,6 +223,7 @@ body.is-lock {
   align-items: center;
   height: 0;
   margin-left: -23px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
 }
 .header .burger.active span:nth-child(1) {
   width: 45%;
@@ -342,6 +332,23 @@ body.is-lock {
 .swiper-promo .swiper-slide {
   display: flex;
 }
+.swiper-promo .swiper-slide::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 70.38%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    linear-gradient(0deg, rgba(61, 74, 96, 0.1), rgba(61, 74, 96, 0.1));
+
+  z-index: 100;
+}
+
 .swiper-promo .swiper-slide picture img {
   position: absolute;
   left: 0;
@@ -366,6 +373,7 @@ body.is-lock {
 .mobile-menu .list {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 16px;
   list-style: none;
   padding: 0;
@@ -376,6 +384,18 @@ body.is-lock {
   font-size: 1.8rem;
   text-decoration: none;
   color: rgba(17, 17, 17, 1);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.mobile-menu .list a:hover {
+  color: rgba(157, 72, 174, 1);
+}
+.mobile-menu .list a span::before {
+  font-size: 1.8rem;
+  color: #000;
+  position: absolute;
+  content: attr(data-title);
+  top: 100%;
 }
 .mobile-menu .contacts-mob {
   display: flex;
@@ -401,14 +421,17 @@ body.is-lock {
 }
 .mobile-menu .contacts-mob .phone-mob {
   margin: 0;
-  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
-  color: transparent;
-  background-clip: text;
-  font-size: 3.2rem;
+  color: rgba(17, 17, 17, 1);
+  font-size: 2.4rem;
   font-weight: 600;
   margin-bottom: 16px;
   display: block;
   line-height: 1;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+.mobile-menu .contacts-mob .phone-mob:hover {
+  color: rgba(157, 72, 174, 1);
 }
 .mobile-menu .contacts-mob p {
   margin: 0;
@@ -427,6 +450,13 @@ body.is-lock {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+}
+.mobile-menu .contacts-mob .social a svg {
+  fill: rgba(204, 204, 204, 1);
+  transition: all 0.3s ease-in-out;
+}
+.mobile-menu .contacts-mob .social a:hover svg {
+  fill: rgba(68, 68, 68, 1);
 }
 .mobile-menu .contacts-mob .map-mob {
   text-decoration: none;
@@ -458,7 +488,7 @@ body.is-lock {
 .mobile-menu.active {
   transform: translateX(0);
   transition: all 0.3s ease-in-out;
-  height: 520px;
+  height: 510px;
 }
 .mobile-menu .container .row {
   display: grid !important;
@@ -483,6 +513,10 @@ body.is-lock {
   margin-top: 72px;
 }
 .promo .title {
+  display: inline-block;
+  text-decoration: none;
+  z-index: 300;
+  position: relative;
   color: #fff;
   font-size: 6.4rem;
   line-height: 1.2;
@@ -491,6 +525,9 @@ body.is-lock {
   margin-top: 300px;
 }
 .promo .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   position: absolute;
   right: 16px;
@@ -507,63 +544,8 @@ body.is-lock {
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
-  border: 2px solid transparent;
-}
-.promo .link::before {
   background: #fff;
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: red;
-  z-index: 100;
-}
-.promo .link:hover {
-  border: 2px solid transparent;
-  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
-}
-.promo .link .visible span {
-  color: rgba(17, 17, 17, 1);
-}
-.promo .link .not-visible span {
-  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
-  color: transparent;
-  background-clip: text;
-}
-.promo .link .visible {
   gap: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transition: all 0.3s ease-in-out;
-  border: none;
-  z-index: 200;
-}
-.promo .link .not-visible {
-  gap: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: #fff;
-  transition: all 0.3s ease-in-out;
-  transform: translateY(70%);
-  border: none;
-  z-index: 200;
-}
-.promo .link:hover .visible {
-  transform: translateY(-70%);
-}
-.promo .link:hover .not-visible {
-  transform: translateY(0%);
 }
 .promo .link img {
   width: 12px;
@@ -595,12 +577,17 @@ body.is-lock {
 .swiper-advantages .swiper-slide {
   cursor: pointer;
   flex: 1 0;
+  overflow: hidden;
 }
 .swiper-advantages .swiper-slide img {
   width: 100%;
   max-width: 100%;
   display: block;
   object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+.swiper-advantages .swiper-slide:hover img {
+  transform: scale(1.1);
 }
 .swiper-advantages .swiper-slide p {
   font-size: 1.8rem;
@@ -650,16 +637,29 @@ body.is-lock {
 }
 .advantages .bottom .col {
   position: relative;
-  height: 480px;
-  background-size: cover !important;
   max-width: 780px;
   width: 100%;
+  overflow: hidden;
+}
+.advantages .bottom .col div {
+  position: relative;
+  height: 480px;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+  max-width: 780px;
+  width: 100%;
+}
+.advantages .bottom .col div {
+  transition: all 0.3s ease-in-out;
+}
+.advantages .bottom .col:hover div {
+  background-size: 110% 110% !important;
 }
 .advantages .bottom .col:not(:first-child) {
   max-width: 370px;
   width: 100%;
 }
-.advantages .bottom .col div:first-child {
+.advantages .bottom .col div div:first-child {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -667,19 +667,19 @@ body.is-lock {
   left: 16px;
   top: 16px;
   width: 135px;
-  height: 135px;
+  height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 16px;
 }
-.advantages .bottom .col div p:first-child {
+.advantages .bottom .col div div p:first-child {
   font-weight: 600;
   font-size: 3.2rem;
   color: #000;
   margin: 0;
 }
-.advantages .bottom .col div p:last-child {
+.advantages .bottom .col div div p:last-child {
   color: #000;
   font-size: 1.6rem;
   border: 1px solid #000;
@@ -694,16 +694,23 @@ body.is-lock {
   justify-content: center;
   position: absolute;
   background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   width: 56px;
   height: 56px;
   bottom: 16px;
   right: 16px;
+  transition: all 0.3s ease-in-out;
 }
-.advantages .bottom .col a img {
-  width: 12px;
-  height: 12px;
+.advantages .bottom .col a svg path {
+  stroke: rgba(157, 72, 174, 1);
+}
+
+.advantages .bottom .col a:hover {
+  background: rgba(157, 72, 174, 1);
+}
+.advantages .bottom .col a:hover svg path {
+  stroke: #fff;
 }
 .advantages-zoom {
   position: fixed;
@@ -802,6 +809,10 @@ body.is-lock {
   color: #000;
   text-decoration: none;
   align-items: center;
+  transition: all 0.3s ease-in;
+}
+.infrastructure-main a:hover {
+  color: rgba(157, 72, 174, 1);
 }
 .infrastructure-main a img {
   height: 18px;
@@ -872,13 +883,19 @@ body.is-lock {
 .planning .room {
   position: relative;
   flex: 1 0 380px;
-  background-size: cover;
+  background-size: 100% 100% !important;
+  background-position: center !important;
   background-repeat: no-repeat;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+.planning .room:hover {
+  background-size: 110% 110% !important;
 }
 .planning .room a {
   text-decoration: none;
@@ -972,19 +989,23 @@ body.is-lock {
   font-weight: 400;
 }
 .news-main .swiper-wrapper .swiper-slide a {
-  background-size: cover !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
   text-decoration: none;
   position: relative;
   min-height: 520px;
   width: 100%;
   display: block;
+  transition: all 0.3s ease-in-out;
+}
+.news-main .swiper-wrapper .swiper-slide a:hover {
+  background-size: 110% 110% !important;
 }
 .news-main .swiper-wrapper .swiper-slide a div {
-  padding: 80px 0;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 24px 24px 32px 24px;
+  padding: 16px 16px 24px 16px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -995,11 +1016,11 @@ body.is-lock {
   margin: 0;
   margin-bottom: 10px;
   line-height: 1.2;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
 }
 .news-main .swiper-wrapper .swiper-slide a div span {
   color: rgba(17, 17, 17, 1);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 .gallery-main {
   padding: 80px 0 80px;
@@ -1024,7 +1045,14 @@ body.is-lock {
   grid-template-rows: 330px 330px;
 }
 .gallery-main .info .col {
+  overflow: hidden;
   position: relative;
+}
+.gallery-main .info .col div {
+  transition: all 0.3s ease-in-out;
+}
+.gallery-main .info .col div:hover {
+  transform: scale(1.1);
 }
 .gallery-main .info .col:nth-child(1) {
   grid-area: col1;
@@ -1040,6 +1068,10 @@ body.is-lock {
 }
 .gallery-main .info .col:nth-child(5) {
   grid-area: col5;
+}
+.gallery-main .info .col div {
+  width: 100%;
+  height: 100%;
 }
 .gallery-main .info span {
   background: rgba(255, 255, 255, 1);
@@ -1099,6 +1131,11 @@ body.is-lock {
   color: rgba(17, 17, 17, 1);
   margin-bottom: 24px;
   display: inline-block;
+  transition: color 0.3s ease-in-out;
+}
+
+.feedback .info .content a:hover:first-of-type {
+  color: rgba(157, 72, 174, 1);
 }
 .feedback .info .content p {
   margin: 0;
@@ -1106,16 +1143,49 @@ body.is-lock {
   color: rgba(68, 68, 68, 1);
   margin-bottom: 24px;
 }
+.feedback .info .content a:nth-of-type(2) {
+  font-size: 1.8rem;
+  color: rgba(68, 68, 68, 1);
+  text-decoration: none;
+  margin-bottom: 24px;
+  transition: all 0.3s ease-in-out;
+}
+.feedback .info .content a:nth-of-type(2):hover {
+  color: #a647ab;
+}
 .feedback .info .content a:last-of-type {
+  font-size: 1.8rem;
   color: rgba(0, 0, 0, 1);
   text-decoration: none;
   margin-top: auto;
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.feedback .info .content a:last-of-type:hover {
+  color: #a647ab;
+}
+.feedback .info .content .social {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 80px;
+}
+.feedback .info .content .social a {
+  display: block;
+  margin: 0 !important;
+  font-size: 0 !important;
+}
+.feedback .info .content .social a svg {
+  transition: all 0.3s ease-in-out;
+  fill: rgba(204, 204, 204, 1);
+}
+.feedback .info .content .social a:hover svg {
+  fill: rgba(68, 68, 68, 1);
 }
 .feedback .info .content a:last-of-type img {
-  height: 18px;
+  height: 12px;
 }
 .feedback form {
   width: 50%;
@@ -1136,7 +1206,7 @@ body.is-lock {
 .feedback form label span {
   color: rgba(17, 17, 17, 1);
   font-family: 'Montserrat', serif;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 400;
   margin-bottom: 10px;
 }
@@ -1213,6 +1283,11 @@ body.is-lock {
   color: #fff;
   background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   grid-area: button;
+  background-size: 100% auto;
+  transition: all 0.3s ease-in-out;
+}
+.feedback form button:hover {
+  background-size: 300% auto;
 }
 .footer {
   padding: 60px 0 80px;
@@ -1264,7 +1339,7 @@ body.is-lock {
   color: #000;
   margin: 0;
   opacity: 0.5;
-  max-width: 400px;
+  max-width: 500px;
   margin: 60px 0;
   grid-area: registr;
 }
@@ -1274,7 +1349,7 @@ body.is-lock {
   color: #000;
   margin: 0;
   opacity: 0.5;
-  max-width: 400px;
+  max-width: 650px;
   margin: 60px 0;
 }
 .footer .menu {
@@ -1294,7 +1369,13 @@ body.is-lock {
   text-decoration: none;
   color: #000;
   position: relative;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
 }
+.footer .menu a:hover {
+  color: #a647ab;
+}
+
 .footer .menu li a::before {
   content: '';
   display: block;
@@ -1302,12 +1383,16 @@ body.is-lock {
   width: 100%;
   background: #c2c2c2;
   position: absolute;
-  bottom: -5px;
+  bottom: 0px;
+  transition: all 0.3s ease-in-out;
+}
+.footer .menu li a:hover::before {
+  background: #a647ab;
 }
 .footer .copyright {
   grid-area: copyright;
   display: flex;
-  gap: 40px;
+  gap: 150px;
 }
 .footer .copyright p {
   font-size: 1.8rem;
@@ -1334,6 +1419,11 @@ body.is-lock {
   font-weight: 400;
   text-decoration: none;
   color: rgba(119, 119, 119, 1);
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+.footer .privacy a:hover {
+  color: #a647ab;
 }
 .catalog {
   padding: 80px 0 0;
@@ -3307,6 +3397,7 @@ body.is-lock {
     margin-bottom: 2.4rem;
   }
   .promo .title {
+    display: flex;
     margin-top: 40px;
     margin-bottom: 0;
     font-size: 4rem;
@@ -3524,7 +3615,7 @@ body.is-lock {
     min-height: 400px;
     position: relative;
     display: block;
-    background-size: cover !important;
+    background-size: 100% 100% !important;
   }
   .news-main .swiper-wrapper .swiper-slide a div {
     padding: 16px 16px 24px 16px;
@@ -3626,7 +3717,7 @@ body.is-lock {
   }
   .feedback form .checkbox {
     margin-bottom: 24px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   .feedback form button {
     font-size: 1.8rem;
