@@ -495,11 +495,11 @@
             <div class="info">
               <img src="./image/logo1.svg" alt="" />
               <h3>Расположение ЖК «GRAND CRYSTAL»</h3>
-              <button type="button">
+              <a href="https://yandex.by/maps/-/CHqMN4Ku" target="_blank">
                 <div><img src="./image/location.svg" alt="" /></div>
 
                 <span>Открыть карту</span>
-              </button>
+              </a>
             </div>
             <div id="map"></div>
           </div>
@@ -788,13 +788,20 @@
           zoom: 17,
           controls: [],
         });
+        let MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+          '<div style="display: flex; align-items: center; justify-content: center; background: #fff; width: 150px; height: 40px; color: #000;">Мястровская 16</div>'
+        );
+
         let = myPlacemark = new ymaps.Placemark(
           [53.937456, 27.471128],
-          {},
+          {
+            hintContent: 'Мястровская, 16',
+            iconCaption: 'Очень длиннный, но невероятно интересный текст',
+          },
           {
             // Опции.
             // Необходимо указать данный тип макета.
-            iconLayout: 'default#image',
+            iconLayout: 'default#imageWithContent',
             // Своё изображение иконки метки.
             iconImageHref: './image/iconMap.svg',
             // Размеры метки.
@@ -802,7 +809,9 @@
             // Смещение левого верхнего угла иконки относительно
             // её "ножки" (точки привязки).
             iconImageOffset: [-30, -100],
-            iconCaption: 'Москва',
+            iconContentOffset: [80, 15],
+            iconCaption: 'Очень длиннный, но невероятно интересный текст',
+            iconContentLayout: MyIconContentLayout,
           }
         );
         myMap.geoObjects.add(myPlacemark);

@@ -947,7 +947,8 @@ body.is-lock {
   margin-bottom: 30px;
   text-align: center;
 }
-.map .info button {
+.map .info a {
+  text-decoration: none;
   cursor: pointer;
   font-family: 'Montserrat', serif;
   font-size: 2.4rem;
@@ -962,7 +963,7 @@ body.is-lock {
   padding: 0 32px;
   position: relative;
 }
-.map .info button div {
+.map .info a div {
   position: absolute;
   left: 2px;
   display: flex;
@@ -971,6 +972,9 @@ body.is-lock {
   background: #fff;
   width: 68px;
   height: 68px;
+
+
+  
 }
 .news-main {
   background: #fff;
@@ -3597,7 +3601,7 @@ body.is-lock {
   .map .info h3 {
     font-size: 3.2rem;
   }
-  .map .info button {
+  .map .info a {
     width: 265px;
     font-size: 1.8rem;
   }
