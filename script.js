@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.querySelector('.modal');
   const btnSend = document.querySelectorAll('.send');
   const modalForm = document.querySelector('.modal form');
+  const btnCloseForm = document.querySelector(
+    '.modal form button[type=button]'
+  );
 
   $('[data-fancybox="gallery"]').fancybox({
     buttons: [
@@ -58,10 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
     e.stopPropagation();
     modal.classList.remove('active');
   });
+  btnCloseForm.addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
   const itemsSliderZoom = document.querySelectorAll(
     '.swiper-advantages .swiper-slide'
   );
   const itemsZoom = document.querySelectorAll('.advantages-zoom div');
+  const btnZoomClose = document.querySelectorAll('.advantages-zoom div button');
   const boxZoom = document.querySelector('.advantages-zoom');
 
   itemsSliderZoom.forEach((itemSliderZoom, i) => {
@@ -78,6 +85,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         itemZoom.addEventListener('click', (e) => {
           e.stopPropagation();
+        });
+
+        btnZoomClose.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            boxZoom.classList.remove('active');
+            itemZoom.classList.remove('active');
+          });
         });
       });
     });

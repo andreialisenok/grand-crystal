@@ -741,10 +741,11 @@ body.is-lock {
 }
 .advantages-zoom div {
   background: #fff;
-  padding: 40px;
+  padding: 56px 40px 40px;
   max-width: 600px;
   width: 100%;
   display: none;
+  position: relative;
 }
 .advantages-zoom div.active {
   display: block;
@@ -768,6 +769,14 @@ body.is-lock {
   font-weight: 400;
   font-size: 1.8rem;
   color: rgba(68, 68, 68, 1);
+}
+.advantages-zoom button {
+  cursor: pointer;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
 }
 .infrastructure-main {
   background: rgba(241, 241, 241, 1) url('./image/pattern.jpg') no-repeat;
@@ -1065,6 +1074,7 @@ body.is-lock {
   margin-bottom: 10px;
   line-height: 1.2;
   font-size: 1.8rem;
+  max-width: 80%;
 }
 .news-main .swiper-wrapper .swiper-slide a div span {
   color: rgba(17, 17, 17, 1);
@@ -2798,6 +2808,7 @@ body.is-lock {
   padding: 40px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .modal form h5 {
   font-size: 4rem;
@@ -2871,7 +2882,7 @@ body.is-lock {
   position: absolute;
   overflow: hidden;
 }
-.modal form button {
+.modal form button[type='submit'] {
   width: 100%;
   height: 72px;
   display: flex;
@@ -2885,6 +2896,14 @@ body.is-lock {
   color: #fff;
   background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   grid-area: button;
+}
+.modal form button[type='button'] {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 @media (max-width: 1919px) {
   .footer .row::before {
