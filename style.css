@@ -52,6 +52,51 @@ body {
   margin: 0;
   padding: 0;
 }
+@property --myColor1 {
+  syntax: '<color>';
+  initial-value: #a647ab;
+  inherits: false;
+}
+
+@property --myColor2 {
+  syntax: '<color>';
+  initial-value: #184eca;
+  inherits: false;
+}
+.hoverBg {
+  background: linear-gradient(
+    84.55deg,
+    var(--myColor1) 0%,
+    var(--myColor2) 100%
+  );
+  transition: --myColor1 0.3s ease-in-out, --myColor2 0.3s ease-in-out;
+}
+.hoverBg:hover {
+  --myColor1: #b148c6 !important;
+  --myColor2: #b148c6 !important;
+}
+.hoverText {
+  transition: all 0.3s ease-in-out;
+}
+.hoverText:hover {
+  color: rgba(177, 72, 198, 1) !important;
+}
+.hoverBorder {
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-image-source: linear-gradient(84.55deg, #fff 0%, #fff 100%);
+  transition: all 0.3s ease-in-out;
+}
+.hoverBorder:hover {
+  border-image-source: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
+}
+.hoverZoom img {
+  transition: all 0.3s ease-in-out;
+}
+.hoverZoom:hover img {
+  transform: scale(1.1);
+}
 body.is-lock {
   overflow: hidden;
 }
@@ -138,21 +183,13 @@ body.is-lock {
   font-family: 'Montserrat', serif;
   font-size: 1.8rem;
   color: #000;
-  transition: all 0.3s ease-in;
 }
-.header .menu a:hover {
-  color: rgba(157, 72, 174, 1);
-}
+
 .header .menu li:first-child a {
   font-size: 1.8rem;
-  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   font-weight: 600;
   color: transparent;
   background-clip: text;
-  background-size: 100% auto;
-}
-.header .menu li:first-child a:hover {
-  background-size: 300% auto;
 }
 .header .contacts {
   display: flex;
@@ -174,18 +211,13 @@ body.is-lock {
   font-size: 1.8rem;
   font-weight: 600;
   text-transform: uppercase;
-  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   color: transparent;
   background-clip: text;
   margin-left: auto;
   width: 100%;
   max-width: 280px;
-  transition: background 0.3s ease-in-out;
-  background-size: 100% auto;
 }
-.header .phone:hover {
-  background-size: 300% auto;
-}
+
 .header .request {
   display: flex;
   align-items: center;
@@ -194,18 +226,12 @@ body.is-lock {
   cursor: pointer;
   width: 230px;
   height: 72px;
-  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   font-family: 'Montserrat', serif;
   font-size: 1.8rem;
   font-weight: 600;
   color: #fff;
-  transition: background 0.3s ease-in-out;
-  background-size: 100% auto;
   overflow: hidden;
   position: relative;
-}
-.header .request:hover {
-  background-size: 300% auto;
 }
 .mobile-menu {
   display: block;
@@ -385,17 +411,6 @@ body.is-lock {
   text-decoration: none;
   color: rgba(17, 17, 17, 1);
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
-}
-.mobile-menu .list a:hover {
-  color: rgba(157, 72, 174, 1);
-}
-.mobile-menu .list a span::before {
-  font-size: 1.8rem;
-  color: #000;
-  position: absolute;
-  content: attr(data-title);
-  top: 100%;
 }
 .mobile-menu .contacts-mob {
   display: flex;
@@ -428,10 +443,6 @@ body.is-lock {
   display: block;
   line-height: 1;
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-.mobile-menu .contacts-mob .phone-mob:hover {
-  color: rgba(157, 72, 174, 1);
 }
 .mobile-menu .contacts-mob p {
   margin: 0;
@@ -543,7 +554,6 @@ body.is-lock {
   line-height: 1.2;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease-in-out;
   overflow: hidden;
   background: #fff;
   gap: 24px;
@@ -580,15 +590,16 @@ body.is-lock {
   flex: 1 0;
   overflow: hidden;
 }
+.swiper-advantages .swiper-slide div {
+  overflow: hidden;
+  height: 160px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
 .swiper-advantages .swiper-slide img {
   width: 100%;
   max-width: 100%;
   display: block;
   object-fit: cover;
-  transition: all 0.3s ease-in-out;
-}
-.swiper-advantages .swiper-slide:hover img {
-  transform: scale(1.1);
 }
 .swiper-advantages .swiper-slide p {
   font-size: 1.8rem;
@@ -689,7 +700,7 @@ body.is-lock {
   text-transform: lowercase;
   font-weight: 400;
 }
-.advantages .bottom .col a {
+.advantages .bottom .col div div:last-child {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -703,14 +714,15 @@ body.is-lock {
   right: 16px;
   transition: all 0.3s ease-in-out;
 }
-.advantages .bottom .col a svg path {
+.advantages .bottom .col div div:last-child svg path {
+  transition: all 0.3s ease-in-out;
   stroke: rgba(157, 72, 174, 1);
 }
 
-.advantages .bottom .col a:hover {
+.advantages .bottom .col:hover div div:last-child {
   background: rgba(157, 72, 174, 1);
 }
-.advantages .bottom .col a:hover svg path {
+.advantages .bottom .col:hover div div:last-child svg path {
   stroke: #fff;
 }
 .advantages-zoom {
@@ -741,7 +753,6 @@ body.is-lock {
   width: 100%;
   max-width: 100%;
   display: block;
-  height: 300px;
   object-fit: cover;
 }
 .advantages-zoom div h5 {
@@ -810,13 +821,9 @@ body.is-lock {
   color: #000;
   text-decoration: none;
   align-items: center;
-  transition: all 0.3s ease-in;
-}
-.infrastructure-main a:hover {
-  color: rgba(157, 72, 174, 1);
 }
 .infrastructure-main a img {
-  height: 18px;
+  height: 12px;
 }
 .planning {
   padding: 80px 0;
@@ -839,13 +846,21 @@ body.is-lock {
   justify-content: space-between;
   gap: 24px;
 }
+
 .planning .col {
   padding: 20px 20px 40px 20px;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  border: 1px solid rgba(194, 194, 194, 1);
   text-decoration: none;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-image-source: linear-gradient(84.55deg, #c2c2c2 0%, #c2c2c2 100%);
+  transition: all 0.3s ease-in-out;
+}
+.planning .col:hover {
+  border-image-source: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
 }
 .planning .col div:nth-child(1) {
   display: flex;
@@ -894,30 +909,44 @@ body.is-lock {
   padding: 16px;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
+  text-decoration: none;
 }
 .planning .room:hover {
   background-size: 110% 110% !important;
 }
-.planning .room a {
+.planning .room div {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 24px;
   justify-content: center;
   background: #fff;
-  padding: 28px 10px;
+  padding: 13px 24px;
   color: #000;
   font-size: 1.8rem;
   font-weight: 600;
   line-height: 1.2;
   width: 100%;
+  max-width: 240px;
+  height: 80px;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-image-source: linear-gradient(84.55deg, #fff 0%, #fff 100%);
+  transition: all 0.3s ease-in-out;
 }
-.planning .room a img {
-  width: 24px;
-  height: 24px;
+.planning .room:hover div {
+  border-image-source: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
+  color: rgba(177, 72, 198, 1) !important;
+}
+.planning .room div img {
+  width: 12px;
+  height: 12px;
 }
 .map .row {
-  border: 1px solid rgba(194, 194, 194, 1);
   position: relative;
 }
 .map #map {
@@ -929,11 +958,10 @@ body.is-lock {
   position: absolute;
   z-index: 100;
   width: 500px;
-  left: 1px;
-  top: 1px;
-  bottom: 1px;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
   background: rgba(255, 255, 255, 0.4);
-  border-right: 2px solid #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -952,9 +980,14 @@ body.is-lock {
   text-decoration: none;
   cursor: pointer;
   font-family: 'Montserrat', serif;
-  font-size: 2.4rem;
-  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
-  width: 310px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  background: linear-gradient(
+    84.55deg,
+    var(--myColor1) 0%,
+    var(--myColor2) 100%
+  );
+  width: 270px;
   height: 72px;
   color: #fff;
   border: none;
@@ -963,6 +996,11 @@ body.is-lock {
   justify-content: flex-end;
   padding: 0 32px;
   position: relative;
+  transition: --myColor1 0.3s ease-in-out, --myColor2 0.3s ease-in-out;
+}
+.map .info a:hover {
+  --myColor1: #b148c6 !important;
+  --myColor2: #b148c6 !important;
 }
 .map .info a div {
   position: absolute;
@@ -978,7 +1016,7 @@ body.is-lock {
   background: #fff;
   padding: 80px 0;
 }
-.news-main h2 {
+.news-main .row > a {
   font-family: 'GrandCrystal', serif;
   display: inline-block;
   margin: 0;
@@ -989,6 +1027,9 @@ body.is-lock {
   background-clip: text;
   font-size: 7.2rem;
   font-weight: 400;
+}
+.news-main .swiper-news {
+  padding-bottom: 20px;
 }
 .news-main .swiper-wrapper .swiper-slide a {
   background-size: 100% 100% !important;
@@ -1002,16 +1043,21 @@ body.is-lock {
 }
 .news-main .swiper-wrapper .swiper-slide a:hover {
   background-size: 110% 110% !important;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
+.news-main .swiper-wrapper .swiper-slide a:hover div {
+  background: rgba(255, 255, 255, 0.95);
 }
 .news-main .swiper-wrapper .swiper-slide a div {
   background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   padding: 16px 16px 24px 16px;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
+  transition: all 0.3s ease-in-out;
 }
 .news-main .swiper-wrapper .swiper-slide a div p {
   color: rgba(17, 17, 17, 1);
@@ -1028,7 +1074,7 @@ body.is-lock {
   padding: 80px 0 80px;
   background: #fff;
 }
-.gallery-main h2 {
+.gallery-main .row > a {
   font-family: 'GrandCrystal', serif;
   display: inline-block;
   margin: 0;
@@ -1049,6 +1095,7 @@ body.is-lock {
 .gallery-main .info .col {
   overflow: hidden;
   position: relative;
+  cursor: pointer;
 }
 .gallery-main .info .col div {
   transition: all 0.3s ease-in-out;
@@ -1163,10 +1210,6 @@ body.is-lock {
   display: flex;
   align-items: center;
   gap: 10px;
-  transition: all 0.3s ease-in-out;
-}
-.feedback .info .content a:last-of-type:hover {
-  color: #a647ab;
 }
 .feedback .info .content .social {
   display: flex;
@@ -1211,6 +1254,7 @@ body.is-lock {
   font-size: 1.8rem;
   font-weight: 400;
   margin-bottom: 10px;
+  display: block;
 }
 .feedback form input {
   width: 100%;
@@ -1264,7 +1308,7 @@ body.is-lock {
   background-position: center;
 }
 .feedback form .checkbox input {
-  visibility: hidden; /* <-- Hide the default checkbox. The rest is to hide and allow tabbing, which display:none prevents */
+  visibility: hidden;
   display: block;
   height: 0;
   width: 0;
@@ -1372,10 +1416,6 @@ body.is-lock {
   color: #000;
   position: relative;
   display: inline-block;
-  transition: all 0.3s ease-in-out;
-}
-.footer .menu a:hover {
-  color: #a647ab;
 }
 
 .footer .menu li a::before {
@@ -1423,9 +1463,6 @@ body.is-lock {
   color: rgba(119, 119, 119, 1);
   display: block;
   transition: all 0.3s ease-in-out;
-}
-.footer .privacy a:hover {
-  color: #a647ab;
 }
 .catalog {
   padding: 80px 0 0;
@@ -2951,12 +2988,6 @@ body.is-lock {
     display: flex;
     border: none;
     justify-content: space-between;
-  }
-  .header {
-    background: #fff;
-    border: 1px solid rgba(194, 194, 194, 1);
-    top: 0;
-    z-index: 10000;
   }
   .header > .container {
     padding: 0;

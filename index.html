@@ -21,17 +21,21 @@
       sizes="16x16"
       href="./favicon/favicon-16x16.png"
     />
-    <link rel="stylesheet" href="./style.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header class="header">
       <div class="container">
         <div class="row">
-          <button type="button" class="burger">
+          <button aria-label="burger" type="button" class="burger">
             <span></span>
             <span></span>
             <span></span>
@@ -41,41 +45,47 @@
               <div class="row">
                 <ul class="list">
                   <li>
-                    <a href="./catalog.html"> Выбрать квартиру </a>
+                    <a href="./catalog.html" class="hoverText">
+                      Выбрать квартиру</a
+                    >
                   </li>
                   <li>
-                    <a href="./about.html">О проекте </a>
+                    <a href="./about.html" class="hoverText">О проекте</a>
                   </li>
                   <li>
-                    <a href="#">Инфраструктура</a>
+                    <a href="#" class="hoverText">Инфраструктура</a>
                   </li>
                   <li>
-                    <a href="./parking.html">Паркинг </a>
+                    <a href="./parking.html" class="hoverText">Паркинг</a>
                   </li>
                   <li>
-                    <a href="#">Коммерция </a>
+                    <a href="#" class="hoverText">Коммерция</a>
                   </li>
                   <li>
-                    <a href="./news-list.html">Новости </a>
+                    <a href="./news-list.html">Новости</a>
                   </li>
                   <li>
-                    <a href="./gallery.html">Галерея </a>
+                    <a href="./gallery.html" class="hoverText">Галерея</a>
                   </li>
                   <li>
-                    <a href="./purchase.html">Условия покупки </a>
+                    <a href="./purchase.html" class="hoverText"
+                      >Условия покупки</a
+                    >
                   </li>
                   <li>
-                    <a href="#">Кредиты </a>
+                    <a href="#" class="hoverText">Кредиты</a>
                   </li>
                   <li>
-                    <a href="./contacts.html">Контакты </a>
+                    <a href="./contacts.html" class="hoverText">Контакты </a>
                   </li>
                 </ul>
                 <div class="contacts-mob">
                   <img src="./image/office.jpg" alt="" />
                   <div class="content">
                     <h5>Наш офис продаж</h5>
-                    <a class="phone-mob" href="tel:+375 (44) 711-33-00"
+                    <a
+                      class="phone-mob hoverText"
+                      href="tel:+375 (44) 711-33-00"
                       >+375 (44) 711-33-00</a
                     >
                     <div class="social">
@@ -123,13 +133,13 @@
                     </div>
                     <p>г.Минск, пр. Дзержинского, 19, 5 этаж, офис 501</p>
 
-                    <a href="#" class="map-mob">
+                    <a href="#" class="map-mob hoverText">
                       Схема проезда
                       <img src="./image/arrow-violet.svg" alt="" />
                     </a>
                   </div>
                 </div>
-                <button type="button send">Оставить заявку</button>
+                <button aria-label="send" type="button">Оставить заявку</button>
               </div>
             </div>
           </nav>
@@ -138,19 +148,19 @@
           </a>
           <ul class="menu">
             <li>
-              <a href="./catalog.html">Выбрать квартиру </a>
+              <a href="./catalog.html" class="hoverBg">Выбрать квартиру </a>
             </li>
             <li>
-              <a href="./about.html">О комплексе </a>
+              <a href="./about.html" class="hoverText">О комплексе </a>
             </li>
             <li>
-              <a href="./purchase.html">Условия покупки </a>
+              <a href="./purchase.html" class="hoverText">Условия покупки </a>
             </li>
             <li>
-              <a href="./news-list.html">Новости</a>
+              <a href="./news-list.html" class="hoverText">Новости</a>
             </li>
           </ul>
-          <a class="phone" href="tel:+375 (44) 711-33-00">
+          <a class="phone hoverBg" href="tel:+375 (44) 711-33-00">
             <svg
               width="24"
               height="24"
@@ -180,7 +190,9 @@
               />
             </svg>
           </a>
-          <button class="request send" type="button">Оставить заявку</button>
+          <button class="request send hoverBg" type="button">
+            Оставить заявку
+          </button>
         </div>
       </div>
     </header>
@@ -201,7 +213,7 @@
                   Старт продаж <br />
                   ЖК Гранд Кристал
                 </a>
-                <a href="#" class="link">
+                <a href="#" class="link hoverText hoverBorder">
                   <span>Подробнее</span>
                   <img src="./image/arrow-violet.svg" alt="" />
                 </a>
@@ -263,20 +275,28 @@
 
             <div class="swiper swiper-advantages">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="./image/advantages3.jpg" alt="" />
+                <div class="swiper-slide hoverZoom">
+                  <div>
+                    <img src="./image/advantages3.jpg" alt="" />
+                  </div>
                   <p>Престижный микрорайон Лебяжий</p>
                 </div>
-                <div class="swiper-slide">
-                  <img src="./image/advantages4.jpg" alt="" />
+                <div class="swiper-slide hoverZoom">
+                  <div>
+                    <img src="./image/advantages4.jpg" alt="" />
+                  </div>
                   <p>Престижный микрорайон Лебяжий</p>
                 </div>
-                <div class="swiper-slide">
-                  <img src="./image/advantages5.jpg" alt="" />
+                <div class="swiper-slide hoverZoom">
+                  <div>
+                    <img src="./image/advantages5.jpg" alt="" />
+                  </div>
                   <p>Безопасный двор</p>
                 </div>
-                <div class="swiper-slide">
-                  <img src="./image/advantages6.jpg" alt="" />
+                <div class="swiper-slide hoverZoom">
+                  <div>
+                    <img src="./image/advantages6.jpg" alt="" />
+                  </div>
                   <p>Удобство транспортной доступности</p>
                 </div>
               </div>
@@ -327,16 +347,16 @@
             <div class="bottom">
               <p>Выбор секции</p>
               <div class="info">
-                <div class="col">
+                <a href="./catalog.html" class="col">
                   <div style="background: url('./image/advantages.jpg')">
                     <div>
                       <p>№1</p>
                       <p>25 этажей</p>
                     </div>
-                    <a href="./catalog.html"
-                      ><svg
-                        width="15"
-                        height="15"
+                    <div>
+                      <svg
+                        width="12"
+                        height="12"
                         viewBox="0 0 15 15"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -347,19 +367,19 @@
                           stroke-linecap="square"
                         />
                       </svg>
-                    </a>
+                    </div>
                   </div>
-                </div>
-                <div class="col">
+                </a>
+                <a href="./catalog.html" class="col">
                   <div style="background: url('./image/advantages1.jpg')">
                     <div>
                       <p>№2</p>
                       <p>16 этажей</p>
                     </div>
-                    <a href="./catalog.html"
-                      ><svg
-                        width="15"
-                        height="15"
+                    <div>
+                      <svg
+                        width="12"
+                        height="12"
                         viewBox="0 0 15 15"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -370,20 +390,19 @@
                           stroke-linecap="square"
                         />
                       </svg>
-                    </a>
+                    </div>
                   </div>
-                </div>
-
-                <div class="col">
+                </a>
+                <a href="./catalog.html" class="col">
                   <div style="background: url('./image/advantages2.jpg')">
                     <div>
                       <p>№3</p>
                       <p>12 этажей</p>
                     </div>
-                    <a href="./catalog.html">
+                    <div>
                       <svg
-                        width="15"
-                        height="15"
+                        width="12"
+                        height="12"
                         viewBox="0 0 15 15"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -394,9 +413,9 @@
                           stroke-linecap="square"
                         />
                       </svg>
-                    </a>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -416,7 +435,7 @@
                   расположение обеспечивает жителям комфортный и оперативный
                   доступ в любую точку города.
                 </p>
-                <a href="#"
+                <a href="#" class="hoverText"
                   >Подробнее <img src="./image/arrow-violet.svg" alt=""
                 /></a>
               </div>
@@ -432,7 +451,7 @@
                   расположение обеспечивает жителям комфортный и оперативный
                   доступ в любую точку города.
                 </p>
-                <a href="#"
+                <a href="#" class="hoverText"
                   >Подробнее <img src="./image/arrow-violet.svg" alt=""
                 /></a>
               </div>
@@ -476,15 +495,16 @@
                   <p>Классическая двухкомнатная квартира с окнами во двор</p>
                 </div>
               </a>
-              <div
+              <a
+                href="./catalog.html"
                 class="room"
                 style="background: url('./image/planning1.jpg') no-repeat"
               >
-                <a href="./catalog.html">
+                <div href="./catalog.html">
                   Смотреть все планировки
                   <img src="./image/arrow-violet.svg" alt="" />
-                </a>
-              </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -495,7 +515,11 @@
             <div class="info">
               <img src="./image/logo1.svg" alt="" />
               <h3>Расположение ЖК «GRAND CRYSTAL»</h3>
-              <a href="https://yandex.by/maps/-/CHqMN4Ku" target="_blank">
+              <a
+                rel="noopener"
+                href="https://yandex.by/maps/-/CHqMN4Ku"
+                target="_blank"
+              >
                 <div><img src="./image/location.svg" alt="" /></div>
 
                 <span>Открыть карту</span>
@@ -508,7 +532,7 @@
       <section class="news-main">
         <div class="container">
           <div class="row">
-            <h2>Новости</h2>
+            <a href="./news-list.html">Новости</a>
 
             <div class="swiper swiper-news">
               <div class="swiper-wrapper">
@@ -577,33 +601,63 @@
       <section class="gallery-main">
         <div class="container">
           <div class="row">
-            <h2>Галерея</h2>
+            <a href="./gallery.html">Галерея</a>
             <div class="info">
-              <div class="col">
-                <div style="background: url('./image/gallery.jpg') no-repeat">
-                  <span># Tags</span>
-                </div>
-              </div>
-              <div class="col">
-                <div style="background: url('./image/gallery1.jpg') no-repeat">
-                  <span># Tags</span>
-                </div>
-              </div>
-              <div class="col">
-                <div style="background: url('./image/gallery2.jpg') no-repeat">
-                  <span># Tags</span>
-                </div>
-              </div>
-              <div class="col">
-                <div style="background: url('./image/gallery3.jpg') no-repeat">
-                  <span># Tags</span>
-                </div>
-              </div>
-              <div class="col">
-                <div style="background: url('./image/gallery4.jpg') no-repeat">
-                  <span># Tags</span>
-                </div>
-              </div>
+              <a
+                href="./image/gallery.jpg"
+                class="col"
+                data-fancybox="gallery"
+                data-caption="Caption Images 1"
+              >
+                <div
+                  style="background: url('./image/gallery.jpg') no-repeat"
+                ></div>
+                <span># Tags</span>
+              </a>
+              <a
+                href="./image/gallery1.jpg"
+                class="col"
+                data-fancybox="gallery"
+                data-caption="Caption Images 1"
+              >
+                <div
+                  style="background: url('./image/gallery1.jpg') no-repeat"
+                ></div>
+                <span># Tags</span>
+              </a>
+              <a
+                href="./image/gallery2.jpg"
+                class="col"
+                data-fancybox="gallery"
+                data-caption="Caption Images 1"
+              >
+                <div
+                  style="background: url('./image/gallery2.jpg') no-repeat"
+                ></div>
+                <span># Tags</span>
+              </a>
+              <a
+                href="./image/gallery3.jpg"
+                class="col"
+                data-fancybox="gallery"
+                data-caption="Caption Images 1"
+              >
+                <div
+                  style="background: url('./image/gallery3.jpg') no-repeat"
+                ></div>
+                <span># Tags</span>
+              </a>
+              <a
+                href="./image/gallery4.jpg"
+                class="col"
+                data-fancybox="gallery"
+                data-caption="Caption Images 1"
+              >
+                <div
+                  style="background: url('./image/gallery4.jpg') no-repeat"
+                ></div>
+                <span># Tags</span>
+              </a>
             </div>
           </div>
         </div>
@@ -624,47 +678,47 @@
                   <div class="social">
                     <a href="#"
                       ><svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
+                        width="40"
+                        height="41"
+                        viewBox="0 0 40 41"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M12 8.75C11.138 8.75 10.3114 9.09241 9.7019 9.7019C9.09241 10.3114 8.75 11.138 8.75 12C8.75 12.862 9.09241 13.6886 9.7019 14.2981C10.3114 14.9076 11.138 15.25 12 15.25C12.862 15.25 13.6886 14.9076 14.2981 14.2981C14.9076 13.6886 15.25 12.862 15.25 12C15.25 11.138 14.9076 10.3114 14.2981 9.7019C13.6886 9.09241 12.862 8.75 12 8.75Z"
-                        ></path>
+                          d="M20.0002 14.9434C18.5636 14.9434 17.1858 15.514 16.17 16.5299C15.1542 17.5457 14.5835 18.9234 14.5835 20.36C14.5835 21.7966 15.1542 23.1744 16.17 24.1902C17.1858 25.206 18.5636 25.7767 20.0002 25.7767C21.4368 25.7767 22.8145 25.206 23.8303 24.1902C24.8461 23.1744 25.4168 21.7966 25.4168 20.36C25.4168 18.9234 24.8461 17.5457 23.8303 16.5299C22.8145 15.514 21.4368 14.9434 20.0002 14.9434Z"
+                        />
                         <path
                           fill-rule="evenodd"
                           clip-rule="evenodd"
-                          d="M6.77012 3.08202C10.2462 2.69695 13.7541 2.69695 17.2301 3.08202C19.1291 3.29402 20.6601 4.78902 20.8831 6.69502C21.2951 10.2197 21.2951 13.7803 20.8831 17.305C20.6601 19.211 19.1291 20.706 17.2311 20.919C13.7548 21.3042 10.2465 21.3042 6.77012 20.919C4.87112 20.706 3.34012 19.211 3.11712 17.306C2.7051 13.781 2.7051 10.22 3.11712 6.69502C3.34012 4.78902 4.87112 3.29402 6.77012 3.08202ZM17.0001 6.00002C16.7349 6.00002 16.4805 6.10537 16.293 6.29291C16.1055 6.48045 16.0001 6.7348 16.0001 7.00002C16.0001 7.26523 16.1055 7.51959 16.293 7.70712C16.4805 7.89466 16.7349 8.00002 17.0001 8.00002C17.2653 8.00002 17.5197 7.89466 17.7072 7.70712C17.8948 7.51959 18.0001 7.26523 18.0001 7.00002C18.0001 6.7348 17.8948 6.48045 17.7072 6.29291C17.5197 6.10537 17.2653 6.00002 17.0001 6.00002ZM7.25012 12C7.25012 10.7402 7.75056 9.53206 8.64136 8.64126C9.53216 7.75046 10.7403 7.25002 12.0001 7.25002C13.2599 7.25002 14.4681 7.75046 15.3589 8.64126C16.2497 9.53206 16.7501 10.7402 16.7501 12C16.7501 13.2598 16.2497 14.468 15.3589 15.3588C14.4681 16.2496 13.2599 16.75 12.0001 16.75C10.7403 16.75 9.53216 16.2496 8.64136 15.3588C7.75056 14.468 7.25012 13.2598 7.25012 12Z"
-                        ></path>
+                          d="M11.2835 5.49648C17.0769 4.85469 22.9235 4.85469 28.7169 5.49648C31.8819 5.84981 34.4335 8.34148 34.8052 11.5181C35.4918 17.3926 35.4918 23.327 34.8052 29.2015C34.4335 32.3781 31.8819 34.8698 28.7185 35.2248C22.9246 35.8667 17.0775 35.8667 11.2835 35.2248C8.11853 34.8698 5.56686 32.3781 5.1952 29.2031C4.5085 23.3281 4.5085 17.3931 5.1952 11.5181C5.56686 8.34148 8.11853 5.84981 11.2835 5.49648ZM28.3335 10.3598C27.8915 10.3598 27.4676 10.5354 27.155 10.848C26.8425 11.1605 26.6669 11.5844 26.6669 12.0265C26.6669 12.4685 26.8425 12.8924 27.155 13.205C27.4676 13.5175 27.8915 13.6931 28.3335 13.6931C28.7756 13.6931 29.1995 13.5175 29.512 13.205C29.8246 12.8924 30.0002 12.4685 30.0002 12.0265C30.0002 11.5844 29.8246 11.1605 29.512 10.848C29.1995 10.5354 28.7756 10.3598 28.3335 10.3598ZM12.0835 20.3598C12.0835 18.2602 12.9176 16.2465 14.4023 14.7619C15.8869 13.2772 17.9006 12.4431 20.0002 12.4431C22.0998 12.4431 24.1135 13.2772 25.5981 14.7619C27.0828 16.2465 27.9169 18.2602 27.9169 20.3598C27.9169 22.4594 27.0828 24.4731 25.5981 25.9577C24.1135 27.4424 22.0998 28.2765 20.0002 28.2765C17.9006 28.2765 15.8869 27.4424 14.4023 25.9577C12.9176 24.4731 12.0835 22.4594 12.0835 20.3598Z"
+                        />
                       </svg>
                     </a>
                     <a href="#">
                       <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
+                        width="40"
+                        height="41"
+                        viewBox="0 0 40 41"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M14.2 2.875C12.9734 2.875 11.797 3.36228 10.9296 4.22963C10.0623 5.09699 9.575 6.27337 9.575 7.5V10.075H7.1C6.976 10.075 6.875 10.175 6.875 10.3V13.7C6.875 13.824 6.975 13.925 7.1 13.925H9.575V20.9C9.575 21.024 9.675 21.125 9.8 21.125H13.2C13.324 21.125 13.425 21.025 13.425 20.9V13.925H15.922C16.025 13.925 16.115 13.855 16.14 13.755L16.99 10.355C16.9984 10.3218 16.9991 10.2872 16.992 10.2537C16.985 10.2202 16.9704 10.1888 16.9494 10.1618C16.9283 10.1348 16.9014 10.1129 16.8707 10.0979C16.84 10.0829 16.8062 10.075 16.772 10.075H13.425V7.5C13.425 7.39823 13.445 7.29745 13.484 7.20342C13.5229 7.10939 13.58 7.02396 13.652 6.95199C13.724 6.88003 13.8094 6.82294 13.9034 6.78399C13.9974 6.74505 14.0982 6.725 14.2 6.725H16.8C16.924 6.725 17.025 6.625 17.025 6.5V3.1C17.025 2.976 16.925 2.875 16.8 2.875H14.2Z"
-                        ></path>
+                          d="M23.6668 5.15137C21.6225 5.15137 19.6618 5.96349 18.2162 7.40909C16.7706 8.85468 15.9585 10.8153 15.9585 12.8597V17.1514H11.8335C11.6268 17.1514 11.4585 17.318 11.4585 17.5264V23.193C11.4585 23.3997 11.6252 23.568 11.8335 23.568H15.9585V35.193C15.9585 35.3997 16.1252 35.568 16.3335 35.568H22.0002C22.2068 35.568 22.3752 35.4014 22.3752 35.193V23.568H26.5368C26.7085 23.568 26.8585 23.4514 26.9002 23.2847L28.3168 17.618C28.3308 17.5627 28.3319 17.505 28.3202 17.4492C28.3084 17.3934 28.2841 17.341 28.2491 17.296C28.2141 17.251 28.1692 17.2146 28.118 17.1895C28.0668 17.1645 28.0105 17.1514 27.9535 17.1514H22.3752V12.8597C22.3752 12.6901 22.4086 12.5221 22.4735 12.3654C22.5384 12.2087 22.6335 12.0663 22.7535 11.9464C22.8734 11.8264 23.0158 11.7313 23.1725 11.6664C23.3292 11.6014 23.4972 11.568 23.6668 11.568H28.0002C28.2068 11.568 28.3752 11.4014 28.3752 11.193V5.52637C28.3752 5.3197 28.2085 5.15137 28.0002 5.15137H23.6668Z"
+                        />
                       </svg>
                     </a>
                     <a href="#"
                       ><svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
+                        width="40"
+                        height="41"
+                        viewBox="0 0 40 41"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="M21.9362 5.17003L18.9062 19.355C18.6802 20.354 18.1002 20.579 17.2622 20.128L12.7172 16.776L10.4922 18.903C10.2672 19.129 10.0412 19.355 9.52516 19.355L9.88016 14.68L18.3582 6.97603C18.7122 6.62103 18.2612 6.49203 17.8102 6.78303L7.26916 13.423L2.72316 12.037C1.72416 11.715 1.72416 11.037 2.94916 10.587L20.6142 3.72003C21.4842 3.46203 22.2262 3.91403 21.9362 5.17003Z"
-                        ></path>
+                          d="M36.5599 8.97629L31.5099 32.618C31.1333 34.283 30.1666 34.658 28.7699 33.9063L21.1949 28.3196L17.4866 31.8646C17.1116 32.2413 16.7349 32.618 15.8749 32.618L16.4666 24.8263L30.5966 11.9863C31.1866 11.3946 30.4349 11.1796 29.6833 11.6646L12.1149 22.7313L4.53827 20.4213C2.87327 19.8846 2.87327 18.7546 4.91494 18.0046L34.3566 6.55963C35.8066 6.12963 37.0433 6.88296 36.5599 8.97629Z"
+                        />
                       </svg>
                     </a>
                   </div>
-                  <a href="">
+                  <a href="#" class="hoverText">
                     Схема проезда
                     <img src="./image/arrow-violet.svg" alt="" />
                   </a>
@@ -715,43 +769,45 @@
           </p>
           <ul class="menu">
             <li>
-              <a href="./catalog.html">Выбрать квартиру </a>
+              <a href="./catalog.html" class="hoverText">Выбрать квартиру</a>
             </li>
             <li>
-              <a href="./news-list.html">Новости </a>
+              <a href="./news-list.html" class="hoverText">Новости</a>
             </li>
             <li>
-              <a href="./about.html">О проекте </a>
+              <a href="./about.html" class="hoverText">О проекте</a>
             </li>
             <li>
-              <a href="./gallery.html">Галерея </a>
+              <a href="./gallery.html" class="hoverText">Галерея</a>
             </li>
             <li>
-              <a href="./infrastructure.html">Инфраструктура </a>
+              <a href="./infrastructure.html" class="hoverText"
+                >Инфраструктура</a
+              >
             </li>
             <li>
-              <a href="./purchase.html">Условия покупки </a>
+              <a href="./purchase.html" class="hoverText">Условия покупки</a>
             </li>
             <li>
-              <a href="./parking.html">Паркинг </a>
+              <a href="./parking.html" class="hoverText">Паркинг</a>
             </li>
             <li>
-              <a href="">Кредиты </a>
+              <a href="" class="hoverText" class="hoverText">Кредиты</a>
             </li>
             <li>
-              <a href="">Коммерция </a>
+              <a href="" class="hoverText" class="hoverText">Коммерция</a>
             </li>
             <li>
-              <a href="./contacts.html">Контакты </a>
+              <a href="./contacts.html" class="hoverText">Контакты</a>
             </li>
           </ul>
           <div class="copyright">
             <p>© 2015 − 2025 ООО «СМУ-87»</p>
-            <a href="#">Cookie</a>
+            <a href="#" class="hoverText">Cookie</a>
           </div>
           <div class="privacy">
-            <a href="#">Условия приватности </a>
-            <a href="#">Разработка сайта </a>
+            <a href="#" class="hoverText">Условия приватности</a>
+            <a href="#" class="hoverText">Разработка сайта</a>
           </div>
         </div>
       </div>
@@ -774,49 +830,11 @@
         <button type="submit">Оставить заявку</button>
       </form>
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <script src="https://api-maps.yandex.ru/2.1/?apikey=2f5f2705-b70d-4afb-ad3f-7767330a0e72&lang=ru_RU"></script>
 
-    <script>
-      ymaps.ready(init);
-      function init() {
-        // Создание карты.
-        let myMap = new ymaps.Map('map', {
-          center: [53.937456, 27.471128],
-          zoom: 17,
-          controls: [],
-        });
-        let MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-          '<div style="display: flex; align-items: center; justify-content: center; background: #fff; width: 150px; height: 40px; color: #000;">Мястровская 16</div>'
-        );
-
-        let = myPlacemark = new ymaps.Placemark(
-          [53.937456, 27.471128],
-          {
-            hintContent: 'Мястровская, 16',
-            iconCaption: 'Очень длиннный, но невероятно интересный текст',
-          },
-          {
-            // Опции.
-            // Необходимо указать данный тип макета.
-            iconLayout: 'default#imageWithContent',
-            // Своё изображение иконки метки.
-            iconImageHref: './image/iconMap.svg',
-            // Размеры метки.
-            iconImageSize: [75, 85],
-            // Смещение левого верхнего угла иконки относительно
-            // её "ножки" (точки привязки).
-            iconImageOffset: [-30, -100],
-            iconContentOffset: [80, 15],
-            iconCaption: 'Очень длиннный, но невероятно интересный текст',
-            iconContentLayout: MyIconContentLayout,
-          }
-        );
-        myMap.geoObjects.add(myPlacemark);
-      }
-    </script>
     <script src="./script.js"></script>
   </body>
 </html>
