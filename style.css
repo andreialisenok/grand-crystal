@@ -912,14 +912,10 @@ body.is-lock {
 .planning .room {
   position: relative;
   flex: 1 0 380px;
-  background-size: 100% 100% !important;
-  background-position: center !important;
-  background-repeat: no-repeat;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease-in-out;
   overflow: hidden;
   text-decoration: none;
 }
@@ -1058,6 +1054,13 @@ body.is-lock {
   display: block;
   transition: all 0.3s ease-in-out;
 }
+.news-main .swiper-wrapper .swiper-slide img {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  height: auto;
+  display: block;
+}
 .news-main .swiper-wrapper .swiper-slide div:first-of-type {
   position: absolute;
   left: 0;
@@ -1091,7 +1094,7 @@ body.is-lock {
   margin-bottom: 10px;
   line-height: 1.2;
   font-size: 1.8rem;
-  max-width: 80%;
+  max-width: 90%;
 }
 .news-main .swiper-wrapper .swiper-slide div:last-of-type span {
   color: rgba(17, 17, 17, 1);
@@ -1338,7 +1341,7 @@ body.is-lock {
 }
 .feedback form button {
   width: 330px;
-  height: 72px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2974,7 +2977,6 @@ body.is-lock {
   }
   .planning .room {
     flex: 1 0 calc(50% - 24px);
-    background-size: 100% 100% !important;
   }
   .advantages .row {
     display: flex;
@@ -3510,7 +3512,6 @@ body.is-lock {
     max-width: 100%;
     width: 100%;
     object-fit: cover;
-    max-height: 140px;
     display: block;
   }
   .advantages .bottom .col div:first-child {
@@ -3638,7 +3639,6 @@ body.is-lock {
   .planning .room {
     flex: 1 0 auto;
     height: 100px;
-    background-size: cover !important;
     padding: 16px;
   }
   .map .info {
@@ -3673,7 +3673,6 @@ body.is-lock {
     min-height: 400px;
     position: relative;
     display: block;
-    background-size: 100% 100% !important;
   }
   .news-main .swiper-wrapper .swiper-slide a div {
     padding: 16px 16px 24px 16px;
@@ -3820,9 +3819,11 @@ body.is-lock {
     gap: 16px;
   }
   .footer .registr {
+    font-size: 1.4rem;
     margin: 16px 0;
   }
   .footer .info {
+    font-size: 1.4rem;
     margin: 16px 0;
   }
   .footer .privacy {
@@ -3970,6 +3971,19 @@ body.is-lock {
   .watched .col p {
     font-size: 1.2rem;
   }
+  .advantages-zoom div {
+    padding: 56px 15px 32px;
+  }
+  .advantages-zoom div h5 {
+    font-size: 1.8rem;
+    margin: 16px 0;
+  }
+  .advantages-zoom div p {
+    font-size: 1.4rem;
+  }
+  .mobile-menu .container .row {
+    padding: 0;
+  }
 }
 @media (max-width: 767px) {
   .watched .info {
@@ -3978,15 +3992,6 @@ body.is-lock {
 
   .catalog-box {
     grid-template-columns: 1fr;
-  }
-  .advantages-zoom div h5 {
-    font-size: 2rem;
-  }
-  .advantages-zoom div p {
-    font-size: 1.4rem;
-  }
-  .advantages-zoom div {
-    padding: 20px;
   }
   .swiper-pagination {
     bottom: 24px !important;
