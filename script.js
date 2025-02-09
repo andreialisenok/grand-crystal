@@ -4,6 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.querySelector('.modal');
   const btnSend = document.querySelectorAll('.send');
   const modalForm = document.querySelector('.modal form');
+
+  $('[data-fancybox="gallery"]').fancybox({
+    buttons: [
+      'slideShow',
+      'thumbs',
+      'zoom',
+      'fullScreen',
+      'share',
+      'download',
+      'close',
+    ],
+    loop: false,
+    protect: true,
+  });
   window.addEventListener('scroll', function () {
     if (window.scrollY > 72) {
       document.querySelector('.header').classList.add('shadow');
