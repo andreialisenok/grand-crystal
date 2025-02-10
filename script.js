@@ -164,40 +164,42 @@ document.addEventListener('DOMContentLoaded', () => {
       swiper: swiperParking,
     },
   });
-  ymaps.ready(init);
-  function init() {
-    // Создание карты.
-    let myMap = new ymaps.Map('map', {
-      center: [53.937456, 27.471128],
-      zoom: 17,
-      controls: [],
-    });
-    let MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-      '<div style="display: flex; align-items: center; justify-content: center; background: #fff; width: 150px; height: 40px; color: #000;">Мястровская 16</div>'
-    );
 
-    let = myPlacemark = new ymaps.Placemark(
-      [53.937456, 27.471128],
-      {
-        hintContent: 'Мястровская, 16',
-        iconCaption: 'Очень длиннный, но невероятно интересный текст',
-      },
-      {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        iconImageHref: './image/iconMap.svg',
-        // Размеры метки.
-        iconImageSize: [75, 85],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [-30, -100],
-        iconContentOffset: [80, 15],
-        iconCaption: 'Очень длиннный, но невероятно интересный текст',
-        iconContentLayout: MyIconContentLayout,
-      }
-    );
-    myMap.geoObjects.add(myPlacemark);
+  if (document.querySelector('#map')) {
+    ymaps.ready(init);
+    function init() {
+      let myMap = new ymaps.Map('map', {
+        center: [53.937456, 27.471128],
+        zoom: 17,
+        controls: [],
+      });
+      let MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+        '<div style="display: flex; align-items: center; justify-content: center; background: #fff; width: 150px; height: 40px; color: #000;">Мястровская 16</div>'
+      );
+
+      let = myPlacemark = new ymaps.Placemark(
+        [53.937456, 27.471128],
+        {
+          hintContent: 'Мястровская, 16',
+          iconCaption: 'Очень длиннный, но невероятно интересный текст',
+        },
+        {
+          // Опции.
+          // Необходимо указать данный тип макета.
+          iconLayout: 'default#imageWithContent',
+          // Своё изображение иконки метки.
+          iconImageHref: './image/iconMap.svg',
+          // Размеры метки.
+          iconImageSize: [75, 85],
+          // Смещение левого верхнего угла иконки относительно
+          // её "ножки" (точки привязки).
+          iconImageOffset: [-30, -100],
+          iconContentOffset: [80, 15],
+          iconCaption: 'Очень длиннный, но невероятно интересный текст',
+          iconContentLayout: MyIconContentLayout,
+        }
+      );
+      myMap.geoObjects.add(myPlacemark);
+    }
   }
 });

@@ -52,6 +52,9 @@ body {
   margin: 0;
   padding: 0;
 }
+.ymaps-2-1-79-copyrights-pane {
+  display: none;
+}
 @property --myColor1 {
   syntax: '<color>';
   initial-value: #a647ab;
@@ -1956,9 +1959,6 @@ body.is-lock {
   left: -100px;
   z-index: 100;
 }
-.news-list {
-  padding: 80px 0 0 0;
-}
 .news-list .list {
   display: grid;
   gap: 40px;
@@ -1966,16 +1966,36 @@ body.is-lock {
   margin-bottom: 40px;
 }
 .news-list .row > .item {
+  display: block;
+  text-decoration: none;
   height: 600px;
   margin-bottom: 40px;
+  position: relative;
+}
+.news-list .img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.news-list .img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 .news-list .item {
   position: relative;
   height: 520px;
   text-decoration: none;
   background-size: cover !important;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
-.news-list .item a {
+.news-list .item .plate {
   position: absolute;
   left: 80px;
   bottom: 80px;
@@ -1985,8 +2005,20 @@ body.is-lock {
   text-decoration: none;
   background: rgba(255, 255, 255, 0.8);
   min-width: 500px;
+  transition: all 0.3s ease-in-out;
 }
-.news-list .item div {
+.news-list .item:hover {
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
+.news-list .item:hover .plate {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
+.news-list .item:hover .content {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
+.news-list .item .content {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1995,6 +2027,7 @@ body.is-lock {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease-in-out;
 }
 .news-list .item h5 {
   font-weight: 600;
@@ -2013,10 +2046,10 @@ body.is-lock {
   color: rgba(17, 17, 17, 1);
   display: block;
 }
-.news-list .item img {
+.news-list .plate img {
   position: absolute;
-  width: 24px;
-  height: 24px;
+  width: 12px;
+  height: 12px;
   top: 32px;
   right: 40px;
 }
@@ -2175,10 +2208,19 @@ body.is-lock {
   gap: 2px;
   margin-bottom: 40px;
 }
-.gallery .col {
-  background-size: cover !important;
+.gallery .info a {
+  text-decoration: none;
+  display: block;
   height: 330px;
   position: relative;
+  overflow: hidden;
+}
+.gallery .info a img {
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
 }
 .gallery .filter {
   display: flex;
@@ -2254,21 +2296,61 @@ body.is-lock {
 .contacts {
   padding: 80px 0;
 }
-.contacts .row {
+.contacts #map {
+  height: 600px;
+  max-width: 100%;
+  margin-top: 80px;
+}
+.contacts .row .image {
+  height: 500px;
+  margin-bottom: 80px;
+  overflow: hidden;
+}
+.contacts .row .image img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.contacts .row .list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 160px 40px;
 }
-.contacts a {
+.contacts .phone {
   text-decoration: none;
   color: #fff;
   font-size: 3.2rem;
   font-weight: 600;
   text-transform: uppercase;
-  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   color: transparent;
   background-clip: text;
   margin-bottom: 24px;
+  display: block;
+}
+.contacts .social {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.contacts .social a {
+  display: block;
+  text-decoration: none;
+}
+.contacts .social a svg {
+  transition: all 0.3s ease-in-out;
+  fill: rgba(204, 204, 204, 1);
+}
+.contacts .social a:hover svg {
+  fill: rgba(68, 68, 68, 1);
+}
+.contacts .mail {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(68, 68, 68, 1);
   display: block;
 }
 .contacts button {
@@ -2281,7 +2363,6 @@ body.is-lock {
   justify-content: center;
   border: none;
   cursor: pointer;
-  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   width: 280px;
   height: 72px;
 }
@@ -2304,11 +2385,29 @@ body.is-lock {
 .about {
   position: relative;
 }
+
 .about .hero {
   height: 760px;
   background-size: cover !important;
   padding: 140px 80px;
   margin-top: 72px;
+  position: relative;
+}
+.about .hero::before {
+  position: relative;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 70.38%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    linear-gradient(0deg, rgba(61, 74, 96, 0.1), rgba(61, 74, 96, 0.1));
+  z-index: 100;
 }
 .about .hero h1 {
   font-size: 6.4rem;
@@ -2317,12 +2416,16 @@ body.is-lock {
   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
   margin: 0;
   margin-bottom: 40px;
+  position: relative;
+  z-index: 100;
 }
 .about .hero p {
   color: #fff;
   max-width: 490px;
   font-size: 1.8rem;
   margin: 0;
+  position: relative;
+  z-index: 100;
 }
 .about .inline-block {
   display: flex;
@@ -2507,6 +2610,22 @@ body.is-lock {
   background-size: cover !important;
   padding: 140px 80px;
   margin-top: 72px;
+  position: relative;
+}
+.infrastructure .hero::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 70.38%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    linear-gradient(0deg, rgba(61, 74, 96, 0.1), rgba(61, 74, 96, 0.1));
+  z-index: 100;
 }
 .infrastructure .hero h1 {
   font-size: 6.4rem;
@@ -2516,8 +2635,12 @@ body.is-lock {
   margin: 0;
   margin-bottom: 250px;
   max-width: 600px;
+  position: relative;
+  z-index: 100;
 }
 .infrastructure .hero .content {
+  position: relative;
+  z-index: 100;
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -2594,6 +2717,22 @@ body.is-lock {
   background-size: cover !important;
   padding: 140px 80px;
   margin-top: 72px;
+  position: relative;
+}
+.parking .hero::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 70.38%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    linear-gradient(0deg, rgba(61, 74, 96, 0.1), rgba(61, 74, 96, 0.1));
+  z-index: 100;
 }
 .parking h1 {
   font-size: 6.4rem;
@@ -2603,6 +2742,8 @@ body.is-lock {
   margin: 0;
   margin-bottom: 40px;
   max-width: 600px;
+  position: relative;
+  z-index: 200;
 }
 .parking .hero button {
   font-family: 'Montserrat', serif;
@@ -2614,11 +2755,12 @@ body.is-lock {
   justify-content: center;
   border: none;
   cursor: pointer;
-  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
   max-width: 285px;
   width: 100%;
   height: 72px;
   margin-bottom: 170px;
+  position: relative;
+  z-index: 200;
 }
 .parking .info {
   margin: 80px 0;
@@ -2631,6 +2773,8 @@ body.is-lock {
   max-width: 460px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  position: relative;
+  z-index: 200;
 }
 .parking .hero .content div {
   padding: 16px;
@@ -2750,7 +2894,6 @@ body.is-lock {
   font-size: 1.8rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 1);
-  background: none;
   border: none;
   display: flex;
   align-items: center;
@@ -2759,7 +2902,6 @@ body.is-lock {
   width: 100%;
   height: 70px;
   cursor: pointer;
-  background: linear-gradient(84.55deg, #a647ab 0%, #184eca 100%);
 }
 .ceo2 {
   margin: 80px 0 0 0;
@@ -3081,7 +3223,7 @@ body.is-lock {
   .contacts {
     padding: 40px 0;
   }
-  .contacts .row {
+  .contacts .row .list {
     grid-template-columns: 1fr;
     gap: 20px;
   }
@@ -3337,9 +3479,6 @@ body.is-lock {
     height: 50px;
     font-size: 1.8rem;
   }
-  .news-list {
-    padding: 24px 0 0 0;
-  }
   .news-list .row > .item {
     margin-bottom: 20px;
   }
@@ -3353,13 +3492,13 @@ body.is-lock {
   .news-list .item span {
     font-size: 1.2rem;
   }
-  .news-list .item a {
+  .news-list .item .plate {
     padding: 16px 16px 16px 24px;
     bottom: 0;
     right: 0;
     left: 0;
   }
-  .news-list .item div {
+  .news-list .item .content {
     padding: 16px 16px 16px 24px;
   }
   .news-list .list {
